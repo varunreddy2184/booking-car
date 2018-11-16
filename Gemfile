@@ -29,10 +29,21 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'cancancan'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  
+  gem 'factory_bot_rails'
+  
+  gem 'launchy'
+  
+  gem 'rspec-rails'
+  
+  end
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

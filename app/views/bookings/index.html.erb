@@ -17,7 +17,7 @@
     <% @bookings.each do |booking| %>
       <tr>
         <td><%= booking.queue_id %></td>
-        <td><%= booking.user %></td>
+        <td><%= booking.user.email %></td>
         <td><%= booking.number_of_seats %></td>
         <td><%= booking.status %></td>
         <td><%= link_to 'Show', booking %></td>

@@ -18,9 +18,9 @@
     <% @cars.each do |car| %>
       <tr>
         <td><%= car.queue_id %></td>
-        <td><%= car.user %></td>
+        <td><%= car.user.email %></td>
         <td><%= car.available_seats %></td>
-        <td><%= car.ar_number %></td>
+        <td><%= car.car_number %></td>
         <td><%= car.status %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>

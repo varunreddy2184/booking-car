@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_11_16_150155) do
     t.integer "queue_id"
     t.bigint "user_id"
     t.integer "available_seats"
-    t.string "ar_number"
+    t.string "car_number"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

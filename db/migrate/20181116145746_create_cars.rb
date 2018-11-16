@@ -4,7 +4,7 @@ class CreateCars < ActiveRecord::Migration[5.2]
       t.integer :queue_id
       t.references :user, foreign_key: true
       t.integer :available_seats
-      t.string :ar_number
+      t.string :car_number
       t.integer :status
 
       t.timestamps

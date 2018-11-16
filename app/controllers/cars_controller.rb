@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_car, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /cars
   # GET /cars.json
   def index
@@ -25,6 +26,8 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = Car.new(car_params)
+    @car.user = current_user
+    @car.status = "in_queue"
 
     respond_to do |format|
       if @car.save
@@ -69,6 +72,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:queue_id, :user_id, :available_seats, :ar_number, :status)
+      params.require(:car).permit(:queue_id, :available_seats, :car_number)
     end
 end

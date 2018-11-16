@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /bookings
   # GET /bookings.json
   def index
@@ -25,6 +27,8 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.status =  'active'
 
     respond_to do |format|
       if @booking.save
@@ -69,6 +73,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:queue_id, :user_id, :number_of_seats, :status)
+      params.require(:booking).permit(:queue_id, :number_of_seats)
     end
 end
