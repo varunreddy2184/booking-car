@@ -2,7 +2,7 @@ class CreateCars < ActiveRecord::Migration[5.2]
   def change
     create_table :cars do |t|
       t.integer :queue_id
-      t.reference :user
+      t.references :user, foreign_key: true
       t.integer :available_seats
       t.string :ar_number
       t.integer :status

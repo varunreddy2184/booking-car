@@ -18,7 +18,7 @@ class CarsTest < ApplicationSystemTestCase
     fill_in "Available Seats", with: @car.available_seats
     fill_in "Queue", with: @car.queue_id
     fill_in "Status", with: @car.status
-    fill_in "User", with: @car.user
+    fill_in "User", with: @car.user_id
     click_on "Create Car"
 
     assert_text "Car was successfully created"
@@ -33,7 +33,7 @@ class CarsTest < ApplicationSystemTestCase
     fill_in "Available Seats", with: @car.available_seats
     fill_in "Queue", with: @car.queue_id
     fill_in "Status", with: @car.status
-    fill_in "User", with: @car.user
+    fill_in "User", with: @car.user_id
     click_on "Update Car"
 
     assert_text "Car was successfully updated"

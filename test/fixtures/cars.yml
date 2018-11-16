@@ -2,14 +2,14 @@
 
 one:
   queue_id: 1
-  user: 
+  user: one
   available_seats: 1
   ar_number: MyString
   status: 1
 
 two:
   queue_id: 1
-  user: 
+  user: two
   available_seats: 1
   ar_number: MyString
   status: 1
