@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Queue:</strong>
+  <%= @car.queue_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @car.user %>
+</p>
+
+<p>
+  <strong>Available seats:</strong>
+  <%= @car.available_seats %>
+</p>
+
+<p>
+  <strong>Ar number:</strong>
+  <%= @car.ar_number %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @car.status %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>
